@@ -8,6 +8,7 @@ import com.shsxt.crm.core.framework.exception.GlobalException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,15 +51,14 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
             result.setCode(e.getCode());
             result.setMsg(e.getMsg());
 
+
             // 判断是否是 json返回
             // ajax  @responsebody
             boolean flag =  HttpRequestConstant.AJAX_XMLHTTPREQUEST
                     .equals(request.getHeader(HttpRequestConstant.HTTP_REQUESTED_WITH));
-
-            Method method = hm.getMethod();
-            ResponseBody an = method.getAnnotation(ResponseBody.class);
-
-            if (flag || an != null) {//说明 异常信息 json 返回
+            boolean an = hm.getMethod().isAnnotationPresent(ResponseBody.class);
+            boolean present =hm.getBean().getClass().isAnnotationPresent(RestController.class);
+            if (flag || an || present ) {//说明 异常信息  json 返回
                 String json = JsonUtil.parseObjectToString(result);
                 JsonUtil.write(response,json);
             }else {

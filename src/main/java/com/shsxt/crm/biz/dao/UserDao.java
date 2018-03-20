@@ -1,8 +1,9 @@
 package com.shsxt.crm.biz.dao;
 
 import com.shsxt.crm.biz.model.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserDao {
 
-    User get(int id);
+    User queryUserByUserName(@Param("userName") String userName);
 }

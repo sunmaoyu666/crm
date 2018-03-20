@@ -1,8 +1,10 @@
 package com.shsxt.crm.biz.service;
 
 import com.shsxt.crm.biz.model.User;
+import com.shsxt.crm.core.common.util.Result;
 
 public interface IUserService {
 
-    User queryServiceById(int id);
+    Result queryServiceLogin(String userName, String userPwd);
 }
+

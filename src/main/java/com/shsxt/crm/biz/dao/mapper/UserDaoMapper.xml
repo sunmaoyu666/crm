@@ -4,8 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.shsxt.crm.biz.dao.UserDao" >
-    <select id="get" parameterType="int" resultType="user">
-        SELECT user_name 'name' FROM t_user WHERE id=#{id};
+
+    <resultMap id="BaseResultMap" type="User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_pwd" property="userPwd" jdbcType="VARCHAR" />
+    <result column="true_name" property="trueName" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+</resultMap>
+
+    <sql id="Base_Column_List" >
+         id, user_name, user_pwd, true_name, email, phone, is_valid, create_date, update_date
+    </sql>
+
+    <select id="queryUserByUserName" parameterType="String" resultType="User">
+          SELECT <include refid="Base_Column_List"/> FROM t_user WHERE user_name = #{userName}
     </select>
 
 </mapper>
+
