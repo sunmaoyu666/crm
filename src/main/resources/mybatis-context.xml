@@ -6,7 +6,7 @@
 
     <!-- 别名扫描 -->
     <typeAliases>
-        <package name="com.shsxt.model"/>
+        <package name="com.shsxt.crm.biz.model"/>
     </typeAliases>
 
     <plugins>

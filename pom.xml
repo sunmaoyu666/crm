@@ -36,6 +36,26 @@
         </configuration>
       </plugin>
     </plugins>
+
+    <resources>
+      <!--  源文件 -->
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.java</include>
+          <include>**/*.xml</include>
+        </includes>
+      </resource>
+      <!-- 资源文件 -->
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.xml</include>
+          <include>**/*.properties</include>
+        </includes>
+      </resource>
+
+    </resources>
   </build>
 
   <properties>
