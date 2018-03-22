@@ -32,7 +32,7 @@
         <version>6.1.25</version>
         <configuration>
           <scanIntervalSeconds>10</scanIntervalSeconds>
-          <contextPath>/</contextPath>
+          <contextPath>/crm</contextPath>
         </configuration>
       </plugin>
     </plugins>

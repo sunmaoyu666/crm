@@ -6,5 +6,15 @@ import com.shsxt.crm.core.common.util.Result;
 public interface IUserService {
 
     Result queryServiceLogin(String userName, String userPwd);
+
+    /**
+     * 用户修改密码
+     * @param userName
+     * @param oldPassword
+     * @param newPassword
+     * @param confirmPassword
+     * @return
+     */
+    Result userModifyPassword(String userName,String oldPassword,String newPassword,String confirmPassword);
 }
 
