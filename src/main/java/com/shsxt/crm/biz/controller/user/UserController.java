@@ -2,11 +2,9 @@ package com.shsxt.crm.biz.controller.user;
 
 import com.shsxt.crm.biz.service.IUserService;
 import com.shsxt.crm.core.common.util.Result;
-import com.shsxt.crm.core.framework.constant.BaseController;
+import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 

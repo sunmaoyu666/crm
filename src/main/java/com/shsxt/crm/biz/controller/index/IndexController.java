@@ -1,6 +1,6 @@
 package com.shsxt.crm.biz.controller.index;
 
-import com.shsxt.crm.core.framework.constant.BaseController;
+import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 

@@ -1,7 +1,7 @@
 package com.shsxt.crm.biz.controller.main;
 
 import com.shsxt.crm.biz.service.IMainIndexService;
-import com.shsxt.crm.core.framework.constant.BaseController;
+import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

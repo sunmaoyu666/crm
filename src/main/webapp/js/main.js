@@ -7,7 +7,7 @@ function openPasswordModifyDialog() {
 }
 
 /**
- * /**
+ *
  * 提交修改密码
  *
  *  执行提交操作，该选项的参数是一个对象，它包含以下属性：
@@ -44,4 +44,29 @@ function modifyPassword() {
 //关闭窗口
 function closePasswordModifyDialog() {
     $('#dlg').dialog('close');
+}
+
+/**
+     添加一个新选项卡面板，选项参数是一个配置对象，查看选项卡面板属性的更多细节。在添加一个新选项卡面板的时候它将变成可选的。
+     添加一个非选中状态的选项卡面板时，记得设置'selected'属性为false。
+     // 添加一个未选中状态的选项卡面板
+     $('#tt').tabs('add',{
+        title: '新选项卡面板',
+        selected: false
+        //...
+    });
+ */
+
+function openTab(text,url,iconCls) {
+    if ($("#tabs").tabs("exists",text)){
+        $("#tabs").tabs("select",text);
+    }else{
+        var content="<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='" +ctx+"/"+ url + "'></iframe>";
+        $('#tabs').tabs('add',{
+            title: text,
+            iconCls: iconCls,
+            closable:true,
+            content:content
+        });
+    }
 }
