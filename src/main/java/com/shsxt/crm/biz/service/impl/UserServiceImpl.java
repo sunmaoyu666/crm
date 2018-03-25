@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements IUserService{
@@ -84,4 +85,11 @@ public class UserServiceImpl implements IUserService{
         }
         return Result.fail("修改失败");
     }
+
+    @Override
+    public List<User> queryAllCustomerManager() {
+        return userDao.queryAllCustomerManager();
+    }
+
+
 }

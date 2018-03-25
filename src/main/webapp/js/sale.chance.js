@@ -28,7 +28,7 @@ $(function(){
 		}
 	});
 	
-	$("#createMan").val($.cookie("trueName"));
+	$("#createMan").val($.cookie("user_name"));
 	
 });
 

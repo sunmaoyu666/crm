@@ -63,13 +63,12 @@
                     联系电话:<input name="linkPhone" required=true type="text"/><br/>
                     机会描述:<input name="description" required=true type="text"/><br/>
                     分配人:<input id="cc" class="easyui-combobox" name="assignMan"
-                             valueField='trueName'  textField='trueName' url='${ctx}/user/queryAllCustomerManager'panelHeight="auto"/><br/><br/>
+                             valueField='user_name'  textField='user_name' url='${ctx}/user/queryAllCustomerManager'panelHeight="auto"/><br/><br/>
                  <input name="id" id="id" type="hidden"/>
                  <input name="createMan" id="createMan" type="hidden"/>
              </form>
 
         </div>
-
 
         <div id="bt">
            <a href="javascript:saveSaleChance()" class="easyui-linkbutton" iconCls="icon-save">保存</a>

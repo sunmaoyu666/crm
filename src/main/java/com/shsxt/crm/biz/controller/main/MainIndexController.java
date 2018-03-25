@@ -1,6 +1,8 @@
 package com.shsxt.crm.biz.controller.main;
 
+import com.shsxt.crm.biz.model.SaleChance;
 import com.shsxt.crm.biz.service.IMainIndexService;
+import com.shsxt.crm.core.common.util.Result;
 import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,4 +23,5 @@ public class MainIndexController extends BaseController{
 
         return mainIndexService.MainIndexCheck(req);
     }
+
 }

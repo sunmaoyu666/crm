@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shsxt.crm.biz.dao.CustomerDao" >
+
+<resultMap id="BaseResultMap" type="com.shsxt.crm.biz.model.Customer" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="khno" property="khno" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="cus_manager" property="cusManager" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="VARCHAR" />
+    <result column="myd" property="myd" jdbcType="VARCHAR" />
+    <result column="xyd" property="xyd" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="post_code" property="postCode" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="fax" property="fax" jdbcType="VARCHAR" />
+    <result column="web_site" property="webSite" jdbcType="VARCHAR" />
+    <result column="yyzzzch" property="yyzzzch" jdbcType="VARCHAR" />
+    <result column="fr" property="fr" jdbcType="VARCHAR" />
+    <result column="zczj" property="zczj" jdbcType="VARCHAR" />
+    <result column="nyye" property="nyye" jdbcType="VARCHAR" />
+    <result column="khyh" property="khyh" jdbcType="VARCHAR" />
+    <result column="khzh" property="khzh" jdbcType="VARCHAR" />
+    <result column="dsdjh" property="dsdjh" jdbcType="VARCHAR" />
+    <result column="gsdjh" property="gsdjh" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="is_valid" property="isValid" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+</resultMap>
+    <sql id="Base_Column_List" >
+        id, khno, name, area, cus_manager, level, myd, xyd, address, post_code, phone, fax,
+        web_site, yyzzzch, fr, zczj, nyye, khyh, khzh, dsdjh, gsdjh, state, is_valid, create_date,
+        update_date
+    </sql>
+
+    <select id="queryAllCustomers" resultMap="BaseResultMap" >
+        select
+          <include refid="Base_Column_List" />
+          from t_customer
+         where is_valid = 1
+    </select>
+</mapper>

@@ -49,5 +49,38 @@
             </where>
     </select>
 
+    <insert id="insertSaleChanceInfo" parameterType="SaleChance">
+
+        INSERT INTO t_sale_chance(chance_source,customer_name,cgjl,overview,link_man,link_phone,description,create_man,assign_man,assign_time,state,is_valid,create_date,update_date)
+        VALUES
+            (
+                #{chanceSource},#{customerName},
+                #{cgjl}, #{overview},
+                #{linkMan},#{linkPhone},
+                #{description},#{createMan},
+                #{assignMan}, #{assignTime},
+                #{state},#{isValid},
+                #{createDate},#{updateDate}
+            )
+    </insert>
+
+    <update id="updateSaleChanceInfo" parameterType="SaleChance">
+
+                UPDATE t_sale_chance
+        SET
+         `chance_source` = #{chancSource},
+         `customer_name` = #{customeName},
+         `cgjl` = #{cgjl},
+         `overview` = #{overview},
+         `link_man` = #{linkMan},
+         `link_phone` = #{linkPhone},
+         `description` = #{description},
+         `create_man` = #{createMan},
+         `update_date` = #{updateDate}
+        WHERE
+            `id` = #{id} AND `is_valid` = '1',
+
+    </update>
+
 
 </mapper>

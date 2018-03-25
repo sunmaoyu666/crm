@@ -2,6 +2,7 @@ package com.shsxt.crm.biz.controller.marketing;
 
 import com.shsxt.crm.biz.model.SaleChance;
 import com.shsxt.crm.biz.service.IMarketingService;
+import com.shsxt.crm.core.common.util.Result;
 import com.shsxt.crm.core.framework.context.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,5 +48,22 @@ public class MarketingConstroller extends BaseController{
     public Map<String,Object> querySaleChanceByParas(SaleChance saleChance){
 
         return marketingService.querySaleChanceByParas(saleChance);
+    }
+
+
+    @RequestMapping("/insert")
+    @ResponseBody
+    public Result insertSaleChanceInfo(SaleChance saleChance){
+
+        return marketingService.insertSaleChanceInfo(saleChance);
+
+    }
+
+    @RequestMapping("/update")
+    @ResponseBody
+    public Result updateSaleChanceInfo(SaleChance saleChance){
+
+        return marketingService.updateSaleChanceInfo(saleChance);
+
     }
 }
